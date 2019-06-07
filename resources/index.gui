@@ -1,5 +1,78 @@
 <svg viewport-fill="black">
-  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
-    <rect x="$-2" y="-120" width="4" height="120" fill="#ff0000" />
+  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
+    <line x1="$" y1="$" x2="$" y2="$-140" fill="white"
+          stroke-width="4" stroke-linecap="round" />
   </g>
+  <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
+    <line x1="$" y1="$" x2="$" y2="$-80" fill="white"
+          stroke-width="5" stroke-linecap="round" />
+  </g>
+  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
+    <line x1="$" y1="$" x2="$" y2="$-145" fill="red"
+          stroke-width="2" stroke-linecap="round" layer="1" />
+  </g>
+
+  <circle cx="50%" cy="50%" r="6" fill="white" layer="2" />
+
+  <circle id="minute-marker-1" class="minute-marker" cx="164" cy="7" r="2" />
+  <circle id="minute-marker-2" class="minute-marker" cx="179" cy="10" r="2" />
+  <circle id="minute-marker-3" class="minute-marker" cx="194" cy="13" r="2" />
+  <circle id="minute-marker-4" class="minute-marker" cx="208" cy="19" r="2" />
+  <circle id="minute-marker-6" class="minute-marker" cx="234" cy="34" r="2" />
+  <circle id="minute-marker-7" class="minute-marker" cx="245" cy="43" r="2" />
+  <circle id="minute-marker-8" class="minute-marker" cx="256" cy="54" r="2" />
+  <circle id="minute-marker-9" class="minute-marker" cx="265" cy="65" r="2" />
+  <circle id="minute-marker-11" class="minute-marker" cx="280" cy="91" r="2" />
+  <circle id="minute-marker-12" class="minute-marker" cx="286" cy="105" r="2" />
+  <circle id="minute-marker-13" class="minute-marker" cx="289" cy="120" r="2" />
+  <circle id="minute-marker-14" class="minute-marker" cx="292" cy="135" r="2" />
+  <circle id="minute-marker-16" class="minute-marker" cx="292" cy="164" r="2" />
+  <circle id="minute-marker-17" class="minute-marker" cx="289" cy="179" r="2" />
+  <circle id="minute-marker-18" class="minute-marker" cx="286" cy="194" r="2" />
+  <circle id="minute-marker-19" class="minute-marker" cx="280" cy="208" r="2" />
+  <circle id="minute-marker-21" class="minute-marker" cx="265" cy="234" r="2" />
+  <circle id="minute-marker-22" class="minute-marker" cx="256" cy="245" r="2" />
+  <circle id="minute-marker-23" class="minute-marker" cx="245" cy="256" r="2" />
+  <circle id="minute-marker-24" class="minute-marker" cx="234" cy="265" r="2" />
+  <circle id="minute-marker-26" class="minute-marker" cx="208" cy="280" r="2" />
+  <circle id="minute-marker-27" class="minute-marker" cx="194" cy="286" r="2" />
+  <circle id="minute-marker-28" class="minute-marker" cx="179" cy="289" r="2" />
+  <circle id="minute-marker-29" class="minute-marker" cx="164" cy="292" r="2" />
+  <circle id="minute-marker-31" class="minute-marker" cx="135" cy="292" r="2" />
+  <circle id="minute-marker-32" class="minute-marker" cx="120" cy="289" r="2" />
+  <circle id="minute-marker-33" class="minute-marker" cx="105" cy="286" r="2" />
+  <circle id="minute-marker-34" class="minute-marker" cx="91" cy="280" r="2" />
+  <circle id="minute-marker-36" class="minute-marker" cx="65" cy="265" r="2" />
+  <circle id="minute-marker-37" class="minute-marker" cx="54" cy="256" r="2" />
+  <circle id="minute-marker-38" class="minute-marker" cx="43" cy="245" r="2" />
+  <circle id="minute-marker-39" class="minute-marker" cx="34" cy="234" r="2" />
+  <circle id="minute-marker-41" class="minute-marker" cx="19" cy="208" r="2" />
+  <circle id="minute-marker-42" class="minute-marker" cx="13" cy="194" r="2" />
+  <circle id="minute-marker-43" class="minute-marker" cx="10" cy="179" r="2" />
+  <circle id="minute-marker-44" class="minute-marker" cx="7" cy="164" r="2" />
+  <circle id="minute-marker-46" class="minute-marker" cx="7" cy="135" r="2" />
+  <circle id="minute-marker-47" class="minute-marker" cx="10" cy="120" r="2" />
+  <circle id="minute-marker-48" class="minute-marker" cx="13" cy="105" r="2" />
+  <circle id="minute-marker-49" class="minute-marker" cx="19" cy="91" r="2" />
+  <circle id="minute-marker-51" class="minute-marker" cx="34" cy="65" r="2" />
+  <circle id="minute-marker-52" class="minute-marker" cx="43" cy="54" r="2" />
+  <circle id="minute-marker-53" class="minute-marker" cx="54" cy="43" r="2" />
+  <circle id="minute-marker-54" class="minute-marker" cx="65" cy="34" r="2" />
+  <circle id="minute-marker-56" class="minute-marker" cx="91" cy="19" r="2" />
+  <circle id="minute-marker-57" class="minute-marker" cx="105" cy="13" r="2" />
+  <circle id="minute-marker-58" class="minute-marker" cx="120" cy="10" r="2" />
+  <circle id="minute-marker-59" class="minute-marker" cx="135" cy="7" r="2" />
+
+  <circle id="hour-marker-0" class="hour-marker hour-marker-3div" cx="150" cy="6" r="4" />
+  <circle id="hour-marker-5" class="hour-marker hour-marker-3div" cx="222" cy="25" r="4" />
+  <circle id="hour-marker-10" class="hour-marker hour-marker-3div" cx="274" cy="77" r="4" />
+  <circle id="hour-marker-15" class="hour-marker hour-marker-3div" cx="294" cy="150" r="4" />
+  <circle id="hour-marker-20" class="hour-marker hour-marker-3div" cx="274" cy="221" r="4" />
+  <circle id="hour-marker-25" class="hour-marker hour-marker-3div" cx="222" cy="274" r="4" />
+  <circle id="hour-marker-30" class="hour-marker hour-marker-3div" cx="150" cy="294" r="4" />
+  <circle id="hour-marker-35" class="hour-marker hour-marker-3div" cx="78" cy="274" r="4" />
+  <circle id="hour-marker-40" class="hour-marker hour-marker-3div" cx="25" cy="222" r="4" />
+  <circle id="hour-marker-45" class="hour-marker hour-marker-3div" cx="6" cy="150" r="4" />
+  <circle id="hour-marker-50" class="hour-marker hour-marker-3div" cx="25" cy="78" r="4" />
+  <circle id="hour-marker-55" class="hour-marker hour-marker-3div" cx="77" cy="25" r="4" />
 </svg>

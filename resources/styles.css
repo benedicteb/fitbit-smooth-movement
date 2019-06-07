@@ -10,3 +10,11 @@
   height: 100%;
   fill: white;
 }
+
+.minute-marker {
+  fill: white;
+}
+
+.hour-marker {
+  fill: white;
+}

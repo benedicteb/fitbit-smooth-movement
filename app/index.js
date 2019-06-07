@@ -2,27 +2,51 @@ import clock from "clock";
 import document from "document";
 import { display } from "display";
 
+const hourHand = document.getElementById("hours");
+const minHand = document.getElementById("mins");
 const secHand = document.getElementById("secs");
 const animationIntervalMs = 50;
 
 let now = null;
 let animationPid = null;
 
-const secondsToAngle = seconds => {
-  return (360 / 60) * seconds;
+const hourHandAngle = (hours, minutes, seconds, millis) => {
+  const totalSeconds = seconds + millis / 1000;
+  const totalMinutes = minutes + totalSeconds / 60;
+  const totalHours = hours + totalMinutes / 60;
+
+  return (360 / 12) * totalHours;
 };
 
-const millisToAngle = millis => {
-  return (360 / (60 * 1000)) * millis;
+const minuteHandAngle = (minutes, seconds, millis) => {
+  const totalSeconds = seconds + millis / 1000;
+  const totalMinutes = minutes + totalSeconds / 60;
+
+  return (360 / 60) * totalMinutes;
 };
 
-const updateClock = intervalDiff => {
+const secondHandAngle = (seconds, millis) => {
+  const totalSeconds = seconds + millis / 1000;
+
+  return (360 / 60) * totalSeconds;
+};
+
+const updateClock = () => {
+  const hours = now.getHours() % 12;
   const secs = now.getSeconds();
-  const millis = secs * 1000 + now.getMilliseconds();
+  const millis = now.getMilliseconds();
+  const mins = now.getMinutes();
 
-  secHand.groupTransform.rotate.angle = millisToAngle(millis);
+  hourHand.groupTransform.rotate.angle = hourHandAngle(
+    hours,
+    mins,
+    secs,
+    millis
+  );
+  minHand.groupTransform.rotate.angle = minuteHandAngle(mins, secs, millis);
+  secHand.groupTransform.rotate.angle = secondHandAngle(secs, millis);
 
-  now = new Date(now.getTime() + intervalDiff);
+  now = new Date(now.getTime() + animationIntervalMs);
 };
 
 const onTick = evt => {
@@ -35,10 +59,7 @@ const initClock = () => {
 };
 
 const initAnimation = () => {
-  animationPid = setInterval(
-    () => updateClock(animationIntervalMs),
-    animationIntervalMs
-  );
+  animationPid = setInterval(updateClock, animationIntervalMs);
 };
 
 const initDisplay = (onWake, onSleep) => {
@@ -59,7 +80,20 @@ const onWake = () => {
 
 const onSleep = () => {
   console.log("About to sleep");
+
+  stopAnimation();
+};
+
+const stopAnimation = () => {
+  console.log("Stopping animation");
+
+  clearInterval(animationPid);
+  animationPid = null;
 };
 
 initDisplay(onWake, onSleep);
 initClock();
+
+setTimeout(() => {
+  onWake();
+}, 50);
