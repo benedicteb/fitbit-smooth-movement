@@ -5,7 +5,7 @@ import { display } from "display";
 const hourHand = document.getElementById("hours");
 const minHand = document.getElementById("mins");
 const secHand = document.getElementById("secs");
-const animationIntervalMs = 50;
+const animationIntervalMs = 100;
 
 let now = null;
 let animationPid = null;
@@ -37,6 +37,8 @@ const updateClock = () => {
   const millis = now.getMilliseconds();
   const mins = now.getMinutes();
 
+  console.log(`${hours}-${mins}-${secs},${millis}`);
+
   hourHand.groupTransform.rotate.angle = hourHandAngle(
     hours,
     mins,
@@ -50,7 +52,11 @@ const updateClock = () => {
 };
 
 const onTick = evt => {
+  console.log("tick");
+
   now = evt.date;
+
+  restartAnimation();
 };
 
 const initClock = () => {
@@ -59,6 +65,8 @@ const initClock = () => {
 };
 
 const initAnimation = () => {
+  console.log("Starting animation");
+
   animationPid = setInterval(updateClock, animationIntervalMs);
 };
 
@@ -91,9 +99,11 @@ const stopAnimation = () => {
   animationPid = null;
 };
 
+const restartAnimation = () => {
+  stopAnimation();
+  initAnimation();
+};
+
 initDisplay(onWake, onSleep);
 initClock();
-
-setTimeout(() => {
-  onWake();
-}, 50);
+onWake();
