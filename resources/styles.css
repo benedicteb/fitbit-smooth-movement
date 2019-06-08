@@ -12,9 +12,9 @@
 }
 
 .minute-marker {
-  fill: white;
+  fill: gray;
 }
 
 .hour-marker {
-  fill: white;
+  fill: red;
 }

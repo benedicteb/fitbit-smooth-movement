@@ -5,7 +5,7 @@ import { display } from "display";
 const hourHand = document.getElementById("hours");
 const minHand = document.getElementById("mins");
 const secHand = document.getElementById("secs");
-const animationIntervalMs = 100;
+const animationIntervalMs = 50;
 
 let now = null;
 let animationPid = null;
@@ -32,12 +32,12 @@ const secondHandAngle = (seconds, millis) => {
 };
 
 const updateClock = () => {
+  now = new Date();
+
   const hours = now.getHours() % 12;
   const secs = now.getSeconds();
   const millis = now.getMilliseconds();
   const mins = now.getMinutes();
-
-  console.log(`${hours}-${mins}-${secs},${millis}`);
 
   hourHand.groupTransform.rotate.angle = hourHandAngle(
     hours,
@@ -48,25 +48,17 @@ const updateClock = () => {
   minHand.groupTransform.rotate.angle = minuteHandAngle(mins, secs, millis);
   secHand.groupTransform.rotate.angle = secondHandAngle(secs, millis);
 
-  now = new Date(now.getTime() + animationIntervalMs);
-};
-
-const onTick = evt => {
-  console.log("tick");
-
-  now = evt.date;
-
-  restartAnimation();
+  // console.log(`${hours}-${mins}-${secs},${millis}`);
 };
 
 const initClock = () => {
-  clock.ontick = onTick;
-  clock.granularity = "seconds";
+  clock.granularity = "off";
 };
 
 const initAnimation = () => {
   console.log("Starting animation");
 
+  updateClock();
   animationPid = setInterval(updateClock, animationIntervalMs);
 };
 

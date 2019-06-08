@@ -1,18 +1,25 @@
 <svg viewport-fill="black">
   <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
-    <line x1="$" y1="$" x2="$" y2="$-140" fill="white"
+    <line x1="$" y1="$" x2="$" y2="$-135" fill="grey"
           stroke-width="4" stroke-linecap="round" />
   </g>
   <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
-    <line x1="$" y1="$" x2="$" y2="$-80" fill="white"
+    <line x1="$" y1="$" x2="$" y2="$-80" fill="grey"
           stroke-width="5" stroke-linecap="round" />
   </g>
   <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
-    <line x1="$" y1="$" x2="$" y2="$-145" fill="red"
+    <line x1="$" y1="$" x2="$" y2="$-130" fill="white"
+          stroke-width="3" stroke-linecap="round" layer="1" />
+
+    <circle cx="$" cy="$" r="5" fill="white" layer="1" />
+    <circle cx="$-5" cy="$-5" r="3" fill="black" layer="2" />
+
+    <line x1="$-3" y1="$-3" x2="$-3" y2="$-18" fill="white"
           stroke-width="2" stroke-linecap="round" layer="1" />
   </g>
 
-  <circle cx="50%" cy="50%" r="6" fill="white" layer="2" />
+  <circle cx="50%" cy="50%" r="9" fill="white" layer="2" />
+  <circle cx="50%" cy="50%" r="6" fill="black" layer="3" />
 
   <circle id="minute-marker-1" class="minute-marker" cx="164" cy="7" r="2" />
   <circle id="minute-marker-2" class="minute-marker" cx="179" cy="10" r="2" />
